@@ -1,0 +1,50 @@
+version: "3.7"
+
+services:
+  nginx:
+    image: nginx:stable-alpine
+    container_name: nginx
+    ports:
+      - 30500:80
+    volumes:
+      - .:/var/www/html
+      - ./nginx:/etc/nginx/conf.d
+    networks:
+      - networkapp
+
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
+      MYSQL_ROOT_HOST: '${DB_HOST}'
+      MYSQL_DATABASE: '${DB_DATABASE}'
+      MYSQL_USER: '${DB_USERNAME}'
+      MYSQL_PASSWORD: '${DB_PASSWORD}'
+    ports:
+      - 30002:3306
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - networkapp
+
+  app:
+    build:
+      args:
+        user: laraveluser
+        uid: 1000
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: app
+    working_dir: /var/www/html
+    volumes:
+      - .:/var/www/html
+    networks:
+      - networkapp
+
+networks:
+  networkapp:
+
+volumes:
+  dbdata:
