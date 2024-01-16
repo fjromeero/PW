@@ -2,7 +2,7 @@
 
 ## Descripción del Proyecto
 
-Este proyecto, correspondiente a la asignatura de Programación Web, tiene como objetivo aplicar los conocimientos adquiridos en PHP y JavaScript. Además, se busca demostrar la capacidad para integrar tecnologías adicionales como Docker, React, Laravel y Tailwind CSS. La iniciativa se centra en el desarrollo de una aplicación web dinámica que mejora la versión estática creada en la primera práctica evaluada.
+Este proyecto, correspondiente a la asignatura de Programación Web, tiene como objetivo aplicar los conocimientos adquiridos en PHP y JavaScript. Además, se busca demostrar la capacidad para integrar tecnologías adicionales como Docker, React, Laravel y Tailwind CSS. La iniciativa se centra en el desarrollo de una aplicación web dinámica que mejora la versión estática creada en la primera práctica evaluada, además de la adición por mi parte de otras tecnologías como son React o Laravel.
 
 ## Tecnologías Utilizadas
 
